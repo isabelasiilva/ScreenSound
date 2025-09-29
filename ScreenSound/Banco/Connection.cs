@@ -1,0 +1,17 @@
+using ScreenSound.Modelos;
+using System.Data.SqlClient;
+
+namespace ScreenSound.Banco
+{
+    // uma classe para só fazer conexão com o banco 
+    internal class Connection
+    {
+        private string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ScreenSound;Integrated Security=True;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        
+        public SqlConnection ObterConexao()
+        {
+            return new SqlConnection(connectionString);
+        }
+
+    }
+}
