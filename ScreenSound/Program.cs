@@ -7,11 +7,11 @@ using ScreenSound.Modelos;
 //    var context = new ScreenSoundContext();
 //    var artistaDAL = new ArtistaDAL(context);
 
+// ----- Testando métodos de artistaDAL -----
 //    //var novoArtista = new Artista("Gilberto Gil", "Bio do Gilberto Gil");
 //    //artistaDAL.Adicionar(novoArtista);
 
 //    //var atualizarArtista = new Artista("Gilberto Gil", "segunda bio do Gilberto Gil") { Id = 1002};
-
 //    //artistaDAL.Atualizar(atualizarArtista);
 
 //    //artistaDAL.Deletar(atualizarArtista);
@@ -34,6 +34,8 @@ using ScreenSound.Modelos;
 
 
 
+
+
 //Artista ira = new Artista("Ira!", "Banda Ira!");
 //Artista beatles = new("The Beatles", "Banda The Beatles");
 
@@ -43,6 +45,32 @@ using ScreenSound.Modelos;
 
 var context = new ScreenSoundContext();
 var artistaDAL = new ArtistaDAL(context);
+var musicaDAL = new MusicaDAL(context);
+
+// ----- Testando métodos de musicaDAL -----
+
+//var novaMusica = new Musica("Oceano");
+//musicaDAL.Adicionar(novaMusica);
+
+//var atualizaMusica = new Musica("Sina") { Id = 1};
+//musicaDAL.Atualizar(atualizaMusica);
+
+//var deletarMusica = new Musica("Oceano") { Id = 3};
+//musicaDAL.Deletar(deletarMusica);
+
+
+var musicaRecuperada = musicaDAL.RecuperarPeloNome("Samurai");
+Console.WriteLine(musicaRecuperada);
+
+
+//var listarMusicas = musicaDAL.ListarMusicas();
+
+//foreach (var item in listarMusicas)
+//{
+//    Console.WriteLine(item);
+//}
+
+
 
 Dictionary<int, Menu> opcoes = new();
 opcoes.Add(1, new MenuRegistrarArtista());
